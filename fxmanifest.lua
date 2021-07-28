@@ -2,7 +2,7 @@ fx_version 'cerulean'
 games { 'gta5' }
 
 author 'MasiBall'
-Description 'Basic ESX Join/Leave logs with identifiers and character information'
+Description 'Basic ESX logs with identifiers and character information'
 
 client_scripts {
 	'client/cl_log.lua'

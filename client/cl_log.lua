@@ -14,7 +14,7 @@ if firstSpawn then
     SetPlayerControl(joinedPlayer, false, 0)
     firstSpawn = false
     Wait(8500)
-    TriggerServerEvent('mball_log:esxjoin')
+    TriggerServerEvent('esx_mball_log:esxjoin')
     SetPlayerControl(joinedPlayer, true, 0)
     firstSpawn = false
     end
@@ -25,7 +25,7 @@ local playtime = 0
 Citizen.CreateThread(function()
     while true do
         playtime = playtime + 1
-        TriggerServerEvent('mball_log:server:playtime', playtime)
+        TriggerServerEvent('esx_mball_log:server:playtime', playtime)
         Citizen.Wait(60000)
     end
 end)
