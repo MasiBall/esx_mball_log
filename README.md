@@ -16,6 +16,7 @@ Note: This resource is tested only on ESX Legacy
 
 # Example of Making Custom Log (I used esx_shops as an example)
 message1 = Not boxed text
+
 message2 = Boxed text
 
 ![example](https://user-images.githubusercontent.com/76224425/127364643-4ffa2eee-691b-41bd-91f2-c16b5d36f735.PNG)
