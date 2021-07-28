@@ -14,7 +14,7 @@ Note: This resource is tested only on ESX Legacy
 3. Add your own webhook to discord channel in `sv_log.lua` line #2
 4. Add to your `server.cfg` file ```ensure esx_mball_log```
 
-#Example of Making Custom Log (I used esx_shops as an example)
+# Example of Making Custom Log (I used esx_shops as an example)
 message1 = Not boxed text
 message2 = Boxed text
 
