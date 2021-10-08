@@ -6,7 +6,8 @@ Command Usage: /pinfo [Player ID]
 Note: This resource is tested only on ESX Legacy
 
 # Preview
-![esxpreview](https://user-images.githubusercontent.com/76224425/120218922-17091280-c243-11eb-84c8-47b3b53c5a13.png)
+https://imgur.com/a/MxXPRpX
+
 
 # Installation
 1. Download the file
