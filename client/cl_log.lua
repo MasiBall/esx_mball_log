@@ -1,10 +1,6 @@
 ESX = nil
-
-Citizen.CreateThread(function()
-	while ESX == nil do
-		TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
-		Citizen.Wait(60000)
-	end
+TriggerEvent('esx:getSharedObject', function(obj)
+    ESX = obj
 end)
 
 local firstSpawn = true
