@@ -1,9 +1,7 @@
 # esx_mball_log
 Basic ESX logs with identifiers and character information
 
-Command Usage: /pinfo [Player ID]
-
-Note: This resource is tested only on ESX Legacy
+More info can be found in [Here](https://forum.cfx.re/t/release-free-mball-log-standalone-esx/2998513?u=masiball)
 
 # Preview
 https://imgur.com/a/MxXPRpX
