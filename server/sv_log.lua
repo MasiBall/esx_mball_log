@@ -26,7 +26,7 @@ AddEventHandler('esx_mball_log:esxjoin', function()
   local xPlayer = ESX.GetPlayerFromId(_source)
   local esx = ESXInfo(_source)
   local specificjointime = specificjointime
-    sendToDiscordLogsEmbed(3158326, '`✅` | PLAYER CONNECTING',' Player: `' ..name.. '`\n Hex-ID: `' ..mb.identifier.. '`\n License: `' ..mb.license.. '`\n Discord ID: `' ..mb.discord.. '`\n XBL ID: `' ..mb.xbl.. '`\n Live ID: `' ..mb.live.. '`\n FiveM ID: `' ..mb.fivem.. '`\n Specific Jointime: `' ..specificjointime.. '`\n IP: `' ..GetPlayerEndpoint(_source)..
+    sendToDiscordLogsEmbed(3158326, '`✅` | PLAYER CONNECTING',' Player: `' ..name.. '`\n Hex-ID: `' ..mb.identifier.. '`\n License: `' ..mb.license.. '`\n Discord Tag: <@' ..mb.discord:gsub('discord:', '').. '>\n Discord ID: `' ..mb.discord.. '`\n XBL ID: `' ..mb.xbl.. '`\n Live ID: `' ..mb.live.. '`\n FiveM ID: `' ..mb.fivem.. '`\n Specific Jointime: `' ..specificjointime.. '`\n IP: `' ..GetPlayerEndpoint(_source)..
     '`\n\n**ESX Information**\n Character: `'..esx.charactername..'`\n Money: `'..esx.overallmoney..' (Cash: '..esx.cash..' Bank: '..esx.bankmoney..')`\n Job: `'..esx.characterjob..' ('..esx.jobgrade..')`')
 end)
 
@@ -38,13 +38,13 @@ AddEventHandler('playerDropped', function(reason)
   local mb = Masipallopaa(_source)
   local xPlayer = ESX.GetPlayerFromId(_source)
   local esx = ESXInfo(_source)
-    sendToDiscordLogsEmbed(3158326, '`❌` | PLAYER DROPPED',' Reason: `' ..reason.. '`\n Player: `' ..name.. '`\n Playtime: `' ..playtime.. ' minutes`\n Hex-ID: `' ..mb.identifier.. '`\n License: `' ..mb.license.. '`\n Discord ID: `' ..mb.discord.. '`\n XBL ID: `' ..mb.xbl.. '`\n Live ID: `' ..mb.live.. '`\n FiveM ID: `' ..mb.fivem.. '`\n IP: `' ..GetPlayerEndpoint(_source)..
+    sendToDiscordLogsEmbed(3158326, '`❌` | PLAYER DROPPED',' Reason: `' ..reason.. '`\n Player: `' ..name.. '`\n Playtime: `' ..playtime.. ' minutes`\n Hex-ID: `' ..mb.identifier.. '`\n License: `' ..mb.license.. '`\n Discord Tag: <@' ..mb.discord:gsub('discord:', '').. '>\n Discord ID: `' ..mb.discord.. '`\n XBL ID: `' ..mb.xbl.. '`\n Live ID: `' ..mb.live.. '`\n FiveM ID: `' ..mb.fivem.. '`\n IP: `' ..GetPlayerEndpoint(_source)..
     '`\n\n**ESX Information**\n Character: `'..esx.charactername..'`\n Money: `'..esx.overallmoney..' (Cash: '..esx.cash..' Bank: '..esx.bankmoney..')`\n Job: `'..esx.characterjob..' ('..esx.jobgrade..')`')
 end)
 
 RegisterCommand("pinfo", function(source, args, rawCommand)
     local xPlayer = ESX.GetPlayerFromId(source)
-      if args[1] and tonumber(args[1]) and xPlayer.getGroup(source) ~= 'user' and xPlayer.getGroup(source) == 'mod' or xPlayer.getGroup(source) == 'admin' or xPlayer.getGroup(source) == 'superadmin' then
+      if args[1] and tonumber(args[1]) and xPlayer.getGroup(source) == 'mod' or xPlayer.getGroup(source) == 'admin' or xPlayer.getGroup(source) == 'superadmin' then
         local _source = args[1]
         TriggerEvent('esx_mball_log:playerinfo', _source)
       TriggerClientEvent("chat:addMessage", source, { args = { "MBall-Logs", "Player Info sent to Discord!" } })
@@ -57,7 +57,7 @@ AddEventHandler('esx_mball_log:playerinfo', function(_source)
   local mb = Masipallopaa(_source)
   local xPlayer = ESX.GetPlayerFromId(_source)
   local esx = ESXInfo(_source)
-  sendToDiscordLogsEmbed(3158326, '`📝` | PLAYER INFO REQUESTED',' Player: `' ..name.. '`\n Hex-ID: `' ..mb.identifier.. '`\n License: `' ..mb.license.. '`\n Discord ID: `' ..mb.discord.. '`\n XBL ID: `' ..mb.xbl.. '`\n Live ID: `' ..mb.live.. '`\n FiveM ID: `' ..mb.fivem.. '`\n IP: `' ..GetPlayerEndpoint(_source)..
+  sendToDiscordLogsEmbed(3158326, '`📝` | PLAYER INFO REQUESTED',' Player: `' ..name.. '`\n Hex-ID: `' ..mb.identifier.. '`\n License: `' ..mb.license.. '`\n Discord Tag: <@' ..mb.discord:gsub('discord:', '').. '>\n Discord ID: `' ..mb.discord.. '`\n XBL ID: `' ..mb.xbl.. '`\n Live ID: `' ..mb.live.. '`\n FiveM ID: `' ..mb.fivem.. '`\n IP: `' ..GetPlayerEndpoint(_source)..
   '`\n\n**ESX Information**\n Character: `'..esx.charactername..'`\n Money: `'..esx.overallmoney..' (Cash: '..esx.cash..' Bank: '..esx.bankmoney..')`\n Job: `'..esx.characterjob..' ('..esx.jobgrade..')`')
 end)
 
@@ -65,7 +65,7 @@ AddEventHandler('chatMessage', function(source, name, msg)
   local mb = Masipallopaa(source)
   local xPlayer = ESX.GetPlayerFromId(source)
   local esx = ESXInfo(source)
-  sendToDiscordLogsEmbed(3158326, '`💬` | CHAT',' Player: `' ..name.. '`\n Message: `' ..msg.. '`\n Hex-ID: `' ..mb.identifier.. '`\n License: `' ..mb.license.. '`\n Discord ID: `' ..mb.discord.. '`\n XBL ID: `' ..mb.xbl.. '`\n Live ID: `' ..mb.live.. '`\n FiveM ID: `' ..mb.fivem.. '`\n IP: `' ..GetPlayerEndpoint(source)..
+  sendToDiscordLogsEmbed(3158326, '`💬` | CHAT',' Player: `' ..name.. '`\n Message: `' ..msg.. '`\n Hex-ID: `' ..mb.identifier.. '`\n License: `' ..mb.license.. '`\n Discord Tag: <@' ..mb.discord:gsub('discord:', '').. '>\n Discord ID: `' ..mb.discord.. '`\n XBL ID: `' ..mb.xbl.. '`\n Live ID: `' ..mb.live.. '`\n FiveM ID: `' ..mb.fivem.. '`\n IP: `' ..GetPlayerEndpoint(source)..
   '`\n\n**ESX Information**\n Character: `'..esx.charactername..'`\n Money: `'..esx.overallmoney..' (Cash: '..esx.cash..' Bank: '..esx.bankmoney..')`\n Job: `'..esx.characterjob..' ('..esx.jobgrade..')`')
 end)
 
@@ -76,12 +76,12 @@ AddEventHandler('esx_mball_log:CustomLog',function(source, message1, message2)
   local mb = Masipallopaa(_source)
   local xPlayer = ESX.GetPlayerFromId(_source)
   local esx = ESXInfo(_source)
-  sendToDiscordLogsEmbed(3158326, '`😗` | Custom Log',' Player: `' ..name.. '`\n' ..message1.. ' `' ..message2.. '`\n Hex-ID: `' ..mb.identifier.. '`\n License: `' ..mb.license.. '`\n Discord ID: `' ..mb.discord.. '`\n XBL ID: `' ..mb.xbl.. '`\n Live ID: `' ..mb.live.. '`\n FiveM ID: `' ..mb.fivem.. '`\n IP: `' ..GetPlayerEndpoint(_source)..
+  sendToDiscordLogsEmbed(3158326, '`😗` | Custom Log',' Player: `' ..name.. '`\n' ..message1.. ' `' ..message2.. '`\n Hex-ID: `' ..mb.identifier.. '`\n License: `' ..mb.license.. '`\n Discord Tag: <@' ..mb.discord:gsub('discord:', '').. '>\n Discord ID: `' ..mb.discord.. '`\n XBL ID: `' ..mb.xbl.. '`\n Live ID: `' ..mb.live.. '`\n FiveM ID: `' ..mb.fivem.. '`\n IP: `' ..GetPlayerEndpoint(_source)..
   '`\n\n**ESX Information**\n Character: `'..esx.charactername..'`\n Money: `'..esx.overallmoney..' (Cash: '..esx.cash..' Bank: '..esx.bankmoney..')`\n Job: `'..esx.characterjob..' ('..esx.jobgrade..')`')
 end)
 
 function sendToDiscordLogsEmbed(color, name, message, footer)
-  local footer = 'Made By MasiBall   '..os.date("%d/%m/%Y     %X")
+  local footer = 'Made My MasiBall - '..os.date("%d/%m/%Y     %X")
   local embed = {
         {
             ["color"] = color,
